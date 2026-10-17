@@ -25,7 +25,7 @@
     if (header) {
       const probe = window.scrollY + 44;
       const darkSections = document.querySelectorAll(
-        ".hero, .timeline-section, .scenario-section, .closing, .site-footer"
+        ".hero, .project-intro, .lighting-overview, .timeline-section, .scenario-section, .closing, .site-footer"
       );
       const isDark = Array.from(darkSections).some((section) => {
         const start = section.offsetTop;
@@ -103,8 +103,10 @@
 
   const timeline = document.querySelector("[data-timeline]");
 
+  const valueFrames = new WeakMap();
   const animateValue = (element, nextValue) => {
     if (!element) return;
+    window.cancelAnimationFrame(valueFrames.get(element));
     const previousValue = Number(element.textContent) || nextValue;
     if (reducedMotion || previousValue === nextValue) {
       element.textContent = String(nextValue);
@@ -117,9 +119,9 @@
       const progress = clamp((now - startedAt) / duration);
       const eased = 1 - Math.pow(1 - progress, 3);
       element.textContent = String(Math.round(previousValue + (nextValue - previousValue) * eased));
-      if (progress < 1) window.requestAnimationFrame(tick);
+      if (progress < 1) valueFrames.set(element, window.requestAnimationFrame(tick));
     };
-    window.requestAnimationFrame(tick);
+    valueFrames.set(element, window.requestAnimationFrame(tick));
   };
 
   if (timeline) {
@@ -160,42 +162,4 @@
     });
   }
 
-  const scenarioData = {
-    nightwalk: {
-      signal: "ベッド付近の離床と進行方向",
-      response: "足元から目的地まで低い光で誘導",
-    },
-    rest: {
-      signal: "長時間の休息と周囲の静けさ",
-      response: "刺激を抑え、落ち着いた低照度を維持",
-    },
-    arrival: {
-      signal: "居室への入室と室内の明るさ",
-      response: "視界に負担をかけず、光を緩やかに点灯",
-    },
-  };
-
-  const scenarioDisplay = document.querySelector("[data-scenario-display]");
-  const scenarioButtons = document.querySelectorAll("[data-scenario-button]");
-  const scenarioSignal = document.querySelector("[data-scenario-signal]");
-  const scenarioResponse = document.querySelector("[data-scenario-response]");
-
-  const activateScenario = (scenarioName) => {
-    const scenario = scenarioData[scenarioName];
-    if (!scenario || !scenarioDisplay) return;
-
-    scenarioDisplay.dataset.scenario = scenarioName;
-    scenarioSignal.textContent = scenario.signal;
-    scenarioResponse.textContent = scenario.response;
-
-    scenarioButtons.forEach((button) => {
-      const selected = button.dataset.scenarioButton === scenarioName;
-      button.classList.toggle("is-active", selected);
-      button.setAttribute("aria-pressed", String(selected));
-    });
-  };
-
-  scenarioButtons.forEach((button) => {
-    button.addEventListener("click", () => activateScenario(button.dataset.scenarioButton));
-  });
 })();

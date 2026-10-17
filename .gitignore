@@ -1,0 +1,9 @@
+# Local preview output and service metadata; retain locally, do not ship to Vercel.
+dist/
+.openai/
+.vercel/
+node_modules/
+*.log
+.env
+.env.*
+!.env.example
