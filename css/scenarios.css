@@ -3,31 +3,15 @@
 .scene-toolbar button { background:transparent; color:#dce2e2; border:1px solid #ffffff32; border-radius:30px; padding:8px 12px; cursor:pointer; font:inherit; font-size:11px; }
 .scene-toolbar button:hover { background:#ffffff12; }
 .scene-toolbar button:focus-visible,.scenario-tab:focus-visible { outline:2px solid #a4d6e2; outline-offset:4px; }
-.story-stage { position:relative; background:#14202b; }
+.story-stage { background:#10171d; }
 .story-room { display:block; width:100%; height:auto; }
-.story-room-labels { fill:#a2b2ba; font-size:9px; letter-spacing:1.4px; }
-.story-caption { position:absolute; top:21px; left:25px; right:20px; display:flex; align-items:flex-start; flex-direction:column; gap:8px; pointer-events:none; }
-.story-caption span { color:#9ed9e4; font-size:10px; letter-spacing:.14em; }
-.story-caption strong { color:#eef2ee; font-size:clamp(12px,1.2vw,16px); font-weight:450; text-shadow:0 2px 12px #0b111b; }
-.story-sequence { display:flex; gap:8px; padding:16px 25px; }
-.story-sequence span { flex:1; padding-top:10px; border-top:1px solid #ffffff22; font-size:11px; color:#87949d; transition:color .3s,border-color .3s; }
-.story-sequence span.is-current { color:#f1d8a7; border-color:#f1d8a7; }
-.story-sequence span.is-complete { color:#b6cfd1; border-color:#779ca3; }
-.story-progress { height:2px; background:#ffffff0b; }
-.story-progress i { display:block; height:100%; width:100%; transform:scaleX(0); transform-origin:left; background:linear-gradient(90deg,#8fc6d4,#f5cb88); }
-.story-note { margin:12px 25px; color:#9aa7b0; font-size:10px; line-height:1.6; }
-.scenario-status { gap:18px; padding:20px 25px; }
-.scenario-status .micro-label { color:#9baab4; }
-.scenario-status strong { color:#dae0df; line-height:1.7; }
+.story-room-labels { fill:#a2b2ba; font-size:13px; letter-spacing:1px; }
+.story-caption { margin:0; padding:18px 25px 8px; color:#e6e9e4; font-size:14px; line-height:1.8; }
+.story-note { margin:0; padding:0 25px 20px; color:#8c999f; font-size:10px; line-height:1.6; }
 .scenario-tab { font-size:12px; color:#bbc3c7; padding:12px 18px; }
 @media(max-width:600px) {
   .scene-toolbar { padding:16px; }
   .scene-toolbar > span { font-size:9px; letter-spacing:.08em; }
-  .story-caption { top:14px; left:16px; gap:5px; }
-  .story-caption strong { font-size:11px; }
-  .story-caption span { font-size:9px; }
-  .story-sequence { padding:12px 16px; }
-  .story-note { margin:10px 16px; font-size:9px; }
-  .scenario-status { padding:18px 16px; }
-  .story-room-labels { font-size:11px; }
+  .story-caption { padding:16px 16px 6px; font-size:13px; }
+  .story-note { padding:0 16px 16px; }
 }

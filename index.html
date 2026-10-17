@@ -405,7 +405,7 @@
               <p class="eyebrow">Reactive scene</p>
               <h2 id="scenario-title">小さな変化に、静かな応答を。</h2>
               <p>
-                下の場面を選ぶと、センサが捉える情報と照明の応答を短い物語として確認できます。
+                場面を選ぶと、人の動きに合わせた光の変化を確認できます。
               </p>
 
               <div class="scenario-tabs" role="group" aria-label="センサ連動場面を選択">
@@ -427,64 +427,32 @@
                 <button type="button" data-story-replay aria-label="選択中の場面をもう一度再生">↻ <span>もう一度見る</span></button>
               </div>
               <div class="story-stage">
-                <svg viewBox="0 0 720 450" class="story-room" aria-hidden="true">
+                <svg viewBox="0 0 640 340" class="story-room" aria-hidden="true">
                   <defs>
-                    <linearGradient id="story-wall" x2="0" y2="1"><stop stop-color="#1d2b37"/><stop offset="1" stop-color="#111b25"/></linearGradient>
-                    <linearGradient id="story-floor" x2="0" y2="1"><stop stop-color="#28323b"/><stop offset="1" stop-color="#111922"/></linearGradient>
-                    <radialGradient id="story-glow"><stop stop-color="#ffd798" stop-opacity=".85"/><stop offset=".45" stop-color="#eab86d" stop-opacity=".3"/><stop offset="1" stop-color="#eab86d" stop-opacity="0"/></radialGradient>
-                    <linearGradient id="story-beam" x2="0" y2="1"><stop stop-color="#ffe5b4" stop-opacity=".18"/><stop offset="1" stop-color="#ffe5b4" stop-opacity="0"/></linearGradient>
+                    <radialGradient id="story-glow"><stop stop-color="#f6cf92" stop-opacity=".65"/><stop offset="1" stop-color="#f6cf92" stop-opacity="0"/></radialGradient>
                   </defs>
-                  <path d="M0 0H720V288H0Z" fill="url(#story-wall)"/>
-                  <path d="M0 288H720V450H0Z" fill="url(#story-floor)"/>
-                  <path d="M0 288H720M70 450L220 288M350 450L380 288M650 450L540 288" stroke="#7d919f" stroke-opacity=".14"/>
-                  <g data-room-wash opacity="0">
-                    <path d="M300 90H420L635 390H100Z" fill="url(#story-beam)"/>
-                    <ellipse cx="360" cy="305" rx="310" ry="200" fill="url(#story-glow)" opacity=".4"/>
+                  <rect x="32" y="32" width="576" height="268" rx="12" fill="#141c22" stroke="#ffffff18"/>
+                  <rect data-room-wash x="33" y="33" width="574" height="266" rx="12" fill="#f6cf92" opacity="0"/>
+                  <path d="M64 254H576" stroke="#ffffff20"/>
+                  <g class="story-bed" fill="none" stroke="#829499" stroke-width="3" stroke-linejoin="round">
+                    <path d="M83 250V166M83 225H265V250M83 210H251Q265 210 265 224"/>
+                    <rect x="93" y="190" width="43" height="19" rx="7" fill="#829499" stroke="none"/>
                   </g>
-                  <path d="M360 0V68" stroke="#64717a"/>
-                  <path d="M331 88Q335 64 360 64Q385 64 389 88Z" fill="#45515a" stroke="#7e8b91"/>
-                  <ellipse data-ceiling-lamp cx="360" cy="88" rx="28" ry="4" fill="#ffe0a2" opacity=".1"/>
-                  <path d="M547 122H655V289H547Z" fill="#090f16" stroke="#748693" stroke-opacity=".6"/>
-                  <path data-door-glow d="M548 280L655 287L708 370L480 350Z" fill="url(#story-glow)" opacity="0"/>
-                  <g data-story-door><path d="M551 126H651V287H551Z" fill="#30404c" stroke="#778996"/><path d="M562 138H640V273H562Z" fill="none" stroke="#778996" stroke-opacity=".2"/><circle cx="567" cy="213" r="3" fill="#d9c9a4"/></g>
-                  <g class="story-bed">
-                    <path d="M62 229L188 215V282L62 303Z" fill="#394b58" stroke="#768b97"/>
-                    <path d="M65 269L189 253L292 318L157 347L65 299Z" fill="#596b74" stroke="#8e9da2"/>
-                    <path d="M76 268L126 264L157 283L106 292Z" fill="#b2b9b6"/>
-                    <path d="M123 294L211 276L282 319L158 344Z" fill="#748b93"/>
-                    <path d="M67 301V327M157 347V367M290 320V342" stroke="#465762" stroke-width="7"/>
+                  <g fill="none" stroke="#829499" stroke-width="3"><path d="M524 253V113H580V253"/><circle cx="566" cy="188" r="3" fill="#829499" stroke="none"/></g>
+                  <g data-bed-glow opacity="0"><ellipse cx="166" cy="191" rx="119" ry="85" fill="url(#story-glow)"/><path d="M91 230H259" stroke="#f6cf92" stroke-width="4" stroke-linecap="round"/></g>
+                  <g data-path-light="0" opacity="0"><ellipse cx="310" cy="252" rx="64" ry="24" fill="url(#story-glow)"/><path d="M280 250H340" stroke="#f6cf92" stroke-width="4" stroke-linecap="round"/></g>
+                  <g data-path-light="1" opacity="0"><ellipse cx="405" cy="252" rx="64" ry="24" fill="url(#story-glow)"/><path d="M375 250H435" stroke="#f6cf92" stroke-width="4" stroke-linecap="round"/></g>
+                  <g data-path-light="2" opacity="0"><ellipse cx="500" cy="252" rx="64" ry="24" fill="url(#story-glow)"/><path d="M470 250H530" stroke="#f6cf92" stroke-width="4" stroke-linecap="round"/></g>
+                  <g data-story-person transform="translate(285 250)" fill="#d7e0df" stroke="#d7e0df" stroke-linecap="round">
+                    <circle cy="-69" r="10" stroke="none"/>
+                    <path d="M0-47V-25" stroke-width="17"/>
+                    <path d="M-9-46L-15-25M9-46L15-25M-5-25L-8-3M5-25L8-3" fill="none" stroke-width="6"/>
                   </g>
-                  <g><path d="M308 281H346V318H308Z" fill="#3c4b55"/><path d="M327 280V253" stroke="#9a9687" stroke-width="3"/><path d="M313 254L318 235H337L343 254Z" fill="#c8b58f"/></g>
-                  <g data-bed-glow opacity="0"><ellipse cx="326" cy="269" rx="95" ry="90" fill="url(#story-glow)"/><ellipse cx="326" cy="337" rx="110" ry="32" fill="url(#story-glow)"/></g>
-                  <path d="M260 363Q420 405 590 320" fill="none" stroke="#deb374" stroke-opacity=".25" stroke-dasharray="3 9"/>
-                  <g data-path-light="0" opacity="0"><ellipse cx="278" cy="363" rx="77" ry="27" fill="url(#story-glow)"/><path d="M260 361H291" stroke="#ffe0a4" stroke-width="4" stroke-linecap="round"/></g>
-                  <g data-path-light="1" opacity="0"><ellipse cx="407" cy="371" rx="80" ry="29" fill="url(#story-glow)"/><path d="M390 370H422" stroke="#ffe0a4" stroke-width="4" stroke-linecap="round"/></g>
-                  <g data-path-light="2" opacity="0"><ellipse cx="540" cy="343" rx="80" ry="28" fill="url(#story-glow)"/><path d="M525 342H555" stroke="#ffe0a4" stroke-width="4" stroke-linecap="round"/></g>
-                  <g data-sensor-rings fill="none" stroke="#99d9e5"><ellipse rx="37" ry="12"/><ellipse rx="61" ry="20" opacity=".45"/><circle cy="-145" r="4" fill="#99d9e5" stroke="none"/><path d="M0-135V-35" stroke-dasharray="2 6" opacity=".35"/></g>
-                  <g data-story-person fill="#c2d0d2" stroke="#c2d0d2" stroke-linecap="round">
-                    <ellipse cy="1" rx="22" ry="6" fill="#000" opacity=".22" stroke="none"/>
-                    <g data-person-body><circle cy="-101" r="10" stroke="none"/><path d="M0-80V-42" stroke-width="19"/><path d="M-10-75L-17-45M10-75L17-45" stroke-width="6"/></g>
-                    <path data-leg-left d="M-6-42L-9-4" fill="none" stroke-width="7"/>
-                    <path data-leg-right d="M6-42L10-4" fill="none" stroke-width="7"/>
-                  </g>
-                  <g class="story-room-labels"><text x="64" y="401">BED / ベッド</text><text x="549" y="105">ENTRANCE / 入口</text></g>
+                  <g class="story-room-labels"><text x="83" y="280">ベッド</text><text x="525" y="280">入口</text></g>
                 </svg>
-                <div class="story-caption"><span data-story-step>01 — 検知</span><strong data-story-caption>ベッドからの起き上がりを検知</strong></div>
               </div>
-              <div class="story-sequence" aria-hidden="true"><span data-story-phase="0">01 検知</span><span data-story-phase="1">02 判断</span><span data-story-phase="2">03 応答</span></div>
-              <div class="story-progress" aria-hidden="true"><i data-story-progress></i></div>
-              <p class="story-note">照明応答のイメージ · 時間を短縮した概念アニメーション</p>
-              <div class="scenario-status" aria-live="polite">
-                <div>
-                  <p class="micro-label">SENSOR READS</p>
-                  <strong data-scenario-signal>ベッド付近の離床と進行方向</strong>
-                </div>
-                <span class="status-pulse" aria-hidden="true"></span>
-                <div>
-                  <p class="micro-label">LIGHT RESPONDS</p>
-                  <strong data-scenario-response>足元から目的地まで低い光で誘導</strong>
-                </div>
-              </div>
+              <p class="story-caption" data-story-caption aria-live="polite">移動に合わせて、足元の光が順に点灯。</p>
+              <p class="story-note">照明の応答を示す概念イメージ</p>
             </div>
           </div>
         </section>
