@@ -399,60 +399,55 @@
           </div>
         </section>
 
-        <section class="scenario-section" id="reactive-scene" aria-labelledby="scenario-title">
-          <div class="scenario-grid section-shell">
-            <div class="scenario-copy reveal">
-              <p class="eyebrow">Reactive scene</p>
+        <section class="timeline-section scenario-section" id="reactive-scene" aria-labelledby="scenario-title">
+          <div class="timeline-heading section-shell reveal">
+            <div class="light-index"><span>05</span><p>REACTIVE SCENE</p></div>
+            <div>
+              <p class="eyebrow dark-eyebrow">ONE ROOM, THREE RESPONSES</p>
               <h2 id="scenario-title">小さな変化に、静かな応答を。</h2>
-              <p>
-                場面を選ぶと、人の動きに合わせた光の変化を確認できます。
-              </p>
-
-              <div class="scenario-tabs" role="group" aria-label="センサ連動場面を選択">
-                <button type="button" class="scenario-tab is-active" data-scenario-button="nightwalk" aria-pressed="true">
-                  夜間の移動
-                </button>
-                <button type="button" class="scenario-tab" data-scenario-button="rest" aria-pressed="false">
-                  休息
-                </button>
-                <button type="button" class="scenario-tab" data-scenario-button="arrival" aria-pressed="false">
-                  帰室
-                </button>
-              </div>
+              <p class="body-copy muted-copy">場面を選ぶと、人の動きに合わせた光の変化を確認できます。</p>
             </div>
+          </div>
+          <div class="timeline-experience section-shell reveal reactive-experience" data-scenario-display data-scenario="nightwalk">
+            <div class="scene-stage reactive-stage" data-scene="night">
+              <div class="room-ceiling" aria-hidden="true"></div>
+              <div class="room-window" aria-hidden="true">
+                <span></span>
+                <span></span>
+              </div>
+              <div class="room-lamp" aria-hidden="true">
+                <i></i>
+              </div>
+              <div class="room-wall" aria-hidden="true">
+                <div class="art-frame"></div>
+                <div class="room-clock">
+                  <span class="clock-hour"></span>
+                  <span class="clock-minute"></span>
+                </div>
+              </div>
+              <div class="room-floor" aria-hidden="true"></div>
+              <div class="room-furniture" aria-hidden="true">
+                <div class="side-table"></div>
+                <div class="chair-back"></div>
+                <div class="chair-seat"></div>
+              </div>
+              <div data-room-wash class="room-light-layer" aria-hidden="true"></div>
+              <div class="timeline-footlights" aria-hidden="true"><i data-path-light="0"></i><i data-path-light="1"></i><i data-path-light="2"></i></div>
 
-            <div class="scenario-display reveal" data-scenario-display data-scenario="nightwalk">
-              <div class="scene-toolbar">
-                <span data-story-title>01 / NIGHT WALK</span>
-                <button type="button" data-story-replay aria-label="選択中の場面をもう一度再生">↻ <span>もう一度見る</span></button>
+              <div class="reactive-rest-glow" data-bed-glow aria-hidden="true"></div>
+              <svg class="scene-direction" data-story-arrow viewBox="0 0 64 32" aria-hidden="true"><path d="M6 16H56M44 5L56 16L44 27" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="scene-label"><span data-story-number>01</span><p data-story-name>夜間の移動</p></div>
+            </div>
+            <div class="scene-controls reactive-controls">
+              <div class="time-tabs reactive-tabs" role="group" aria-label="センサ連動場面を選択">
+                <button type="button" class="time-tab is-active" data-scenario-button="nightwalk" aria-pressed="true"><span>01 / MOVE</span>夜間の移動</button>
+                <button type="button" class="time-tab" data-scenario-button="rest" aria-pressed="false"><span>02 / REST</span>休息</button>
+                <button type="button" class="time-tab" data-scenario-button="arrival" aria-pressed="false"><span>03 / ARRIVE</span>帰室</button>
               </div>
-              <div class="story-stage">
-                <svg viewBox="0 0 640 340" class="story-room" aria-hidden="true">
-                  <defs>
-                    <radialGradient id="story-glow"><stop stop-color="#f6cf92" stop-opacity=".65"/><stop offset="1" stop-color="#f6cf92" stop-opacity="0"/></radialGradient>
-                  </defs>
-                  <rect x="32" y="32" width="576" height="268" rx="12" fill="#141c22" stroke="#ffffff18"/>
-                  <rect data-room-wash x="33" y="33" width="574" height="266" rx="12" fill="#f6cf92" opacity="0"/>
-                  <path d="M64 254H576" stroke="#ffffff20"/>
-                  <g class="story-bed" fill="none" stroke="#829499" stroke-width="3" stroke-linejoin="round">
-                    <path d="M83 250V166M83 225H265V250M83 210H251Q265 210 265 224"/>
-                    <rect x="93" y="190" width="43" height="19" rx="7" fill="#829499" stroke="none"/>
-                  </g>
-                  <g fill="none" stroke="#829499" stroke-width="3"><path d="M524 253V113H580V253"/><circle cx="566" cy="188" r="3" fill="#829499" stroke="none"/></g>
-                  <g data-bed-glow opacity="0"><ellipse cx="166" cy="191" rx="119" ry="85" fill="url(#story-glow)"/><path d="M91 230H259" stroke="#f6cf92" stroke-width="4" stroke-linecap="round"/></g>
-                  <g data-path-light="0" opacity="0"><ellipse cx="310" cy="252" rx="64" ry="24" fill="url(#story-glow)"/><path d="M280 250H340" stroke="#f6cf92" stroke-width="4" stroke-linecap="round"/></g>
-                  <g data-path-light="1" opacity="0"><ellipse cx="405" cy="252" rx="64" ry="24" fill="url(#story-glow)"/><path d="M375 250H435" stroke="#f6cf92" stroke-width="4" stroke-linecap="round"/></g>
-                  <g data-path-light="2" opacity="0"><ellipse cx="500" cy="252" rx="64" ry="24" fill="url(#story-glow)"/><path d="M470 250H530" stroke="#f6cf92" stroke-width="4" stroke-linecap="round"/></g>
-                  <g data-story-person transform="translate(285 250)" fill="#d7e0df" stroke="#d7e0df" stroke-linecap="round">
-                    <circle cy="-69" r="10" stroke="none"/>
-                    <path d="M0-47V-25" stroke-width="17"/>
-                    <path d="M-9-46L-15-25M9-46L15-25M-5-25L-8-3M5-25L8-3" fill="none" stroke-width="6"/>
-                  </g>
-                  <g class="story-room-labels"><text x="83" y="280">ベッド</text><text x="525" y="280">入口</text></g>
-                </svg>
+              <div class="scene-information" aria-live="polite">
+                <div class="scene-description"><p class="micro-label">LIGHTING RESPONSE</p><h3 data-story-title>進む先に、足元の光を。</h3><p data-story-caption>矢印は移動の方向。進む先が点灯し、通過した光はゆっくり消えます。</p></div>
               </div>
-              <p class="story-caption" data-story-caption aria-live="polite">移動に合わせて、足元の光が順に点灯。</p>
-              <p class="story-note">照明の応答を示す概念イメージ</p>
+              <div class="reactive-actions"><button type="button" data-story-replay aria-label="選択中の場面をもう一度再生">↻ もう一度見る</button><p class="metric-note">矢印は動きの方向を示します。照明応答の概念イメージです。</p></div>
             </div>
           </div>
         </section>
