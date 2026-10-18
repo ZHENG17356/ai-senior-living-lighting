@@ -348,3 +348,9 @@ button { -webkit-tap-highlight-color:transparent; }
   .site-details img { height:210px; }
   .proposal-pending { padding:18px; }
 }
+
+/* Give the wide ceiling record its natural composition, without empty bands. */
+#space-lounge .comparison-images { grid-template-columns:1fr; }
+#space-lounge .photo-wide-detail { aspect-ratio:1477 / 488; }
+#space-lounge .proposal-pending { aspect-ratio:auto; min-height:200px; }
+#space-lounge .proposal-pending > div { padding:12px; }
