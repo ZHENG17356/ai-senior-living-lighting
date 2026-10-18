@@ -15,8 +15,10 @@
     setText('role',space.role); setText('time',space[mode]);
     overview.querySelector('[data-plan-time]').previousElementSibling.textContent = mode === 'day' ? '日中の考え方' : '夜間の考え方';
     const photo = overview.querySelector('[data-plan-photo]');
-    photo.src = `assets/images/demo/${selected}-proposal.jpg`;
-    photo.alt = `${space.name}の雰囲気を示す仮の参考写真。現地写真や実際の提案CGではありません。`;
+    const photos = { corridor: ['corridor', '廊下'], lounge: ['shared-ceiling', '共用空間の天井照明（写真上部）'], bedroom: ['room-entrance', '居室入口'] };
+    photo.src = `assets/images/site/${photos[selected][0]}.jpg`;
+    photo.alt = `Many People 広島石内の${photos[selected][1]}の現況写真。`;
+    overview.querySelector('[data-plan-photo-label]').textContent = `現況写真 / ${photos[selected][1]}`;
     overview.querySelector('[data-plan-link]').href = `#space-${selected}`;
     overview.querySelectorAll('[data-space-button]').forEach(button => button.setAttribute('aria-pressed',String(button.dataset.spaceButton === selected)));
     overview.querySelectorAll('[data-plan-mode-button]').forEach(button => button.setAttribute('aria-pressed',String(button.dataset.planModeButton === mode)));
